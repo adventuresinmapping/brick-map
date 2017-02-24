@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <style></style>
+    <link rel="stylesheet" href="https://js.arcgis.com/3.16/esri/css/esri.css">
+    <link rel="stylesheet" href="./style/main.css">
+
+    <script>
+        var locationPath = location.origin + location.pathname.replace(/\/[^/]+$/, '');
+        var dojoConfig = {
+            parseOnLoad: true,
+            packages: [
+                {
+                    "name": "app_modules",
+                    "location": locationPath + '/js/modules'
+                },
+                {
+                    "name": "configs",
+                    "location": locationPath + '/js/configs'
+                },                
+            ]
+        };
+    </script>     
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="./js/html2canvas.min.js"></script>
+    <script src="./js/photomosaic.js"></script>
+    <script src="./js/caman.min.js"></script>
+    <script src="https://js.arcgis.com/3.16/"></script>
+    <script src="./js/main.js"></script>
+</head>
+
+<body>
+    <div id="mapDiv">
+    </div>
+
+    <div id="convertToLegoBtn">convert to lego</div>     
+
+    <div id="canvasDiv"></div>
+
+    <img id="legoIcon" src="./images/legostud.png" width="31" height="31"/>
+  
+    <script type="text/javascript">
+        // require([
+        //     "app_modules/initApp"
+        // ], function (Application) {
+        //     var app = new Application();
+        // });
+    </script>
+        
+</body>
+</html>
