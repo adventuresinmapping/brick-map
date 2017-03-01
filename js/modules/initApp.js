@@ -16,15 +16,16 @@ define([
         
         constructor: function () {
             this.map = this._initMap(); 
-            // this.config = mapConfig;
         },
 
         _initMap: function(config){
             var map = new Map(mapConfig.map.container_id, mapConfig.map.options);
-            this._initMapLayers(map);
-            map.on("click", lang.hitch(this, function(evt){
-                this._mapClickEventHandler(evt);
-            }));
+
+            // this._initMapLayers(map);
+            // map.on("click", lang.hitch(this, function(evt){
+            //     this._mapClickEventHandler(evt);
+            // }));
+
             return map;
         },
 

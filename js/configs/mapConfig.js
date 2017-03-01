@@ -5,7 +5,7 @@ define({
         options: {
             basemap: 'satellite',
             center: [-95, 38],
-            zoom: 4, 
+            zoom: 3, 
             showAttribution: false,
             logo: false,
             slider: false
