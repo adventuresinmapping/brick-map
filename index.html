@@ -58,8 +58,8 @@
       </div>
 
         <div id="nav-icons">
-            <div><span class="fa fa-twitter fa-1x"></span></div>
-            <div><span class="fa fa-facebook fa-1x"></span></div>
+            <div class="twitter-popup"><span class="fa fa-twitter fa-1x"></span></div>
+            <div class="facebook-popup"><span class="fa fa-facebook fa-1x"></span></div>
         </div>
     </nav>
 
@@ -68,7 +68,23 @@
         <div class="row vertical-center-row">
             <div class="text-center col-md-5 map-wrapper">
                 <div class="top-wrapper" id="mapDiv"></div>
-                <div class="bottom-wrapper"></div>
+                <div class="bottom-wrapper">
+
+                    <!--<div class="buttons-wrapper">
+                        <div class="icon"><span class="fa fa-download fa-1x"></span></div>
+                        <div class="icon"><span class="fa fa-download fa-1x"></span></div>
+                        <div class="icon"><span class="fa fa-download fa-1x"></span></div>
+                    </div>
+
+                    <div class="divider">
+                        <div></div>
+                    </div>-->
+
+                    <div class="buttons-wrapper">
+                        <div class="toggle-basemap-btn btn-with-underline"><i>Map</i></div>
+                        <div class="toggle-basemap-btn btn-with-underline active"><i>Satellie</i></div>
+                    </div>
+                </div>
             </div>
 
             <div class="text-center col-md-2 convert-btn-wrapper">
@@ -79,24 +95,19 @@
 
             <div class="text-center col-md-5 map-wrapper">
                 <div class="top-wrapper" id="canvasDiv"></div>
-                <div class="bottom-wrapper"></div>
+                <div class="bottom-wrapper">
+                    <div class="buttons-wrapper right">
+                        <div class="icon download-canvas-image"><span class="fa fa-download fa-1x"></span></div>
+                    </div>
+                </div>
             </div>
         </div>
 
     </div><!-- /.container -->
 
-    <div class="footer"></div>
-
-    
-
-    
-
-    
-
-
-    <!--<div id="mapDiv"></div>
-    <div id="convertToLegoBtn">convert to lego</div>     
-    <div id="canvasDiv"></div>-->
+    <div class="footer">
+        <i>LEGOIFER is a for-fun map hack by <a href="https://twitter.com/John_M_Nelson" target="_blank">John Nelson</a> and <a href="http://tofuballs.com/" target="_blank">Vanni Zhang</a></i>
+    </div>
     <img id="legoIcon" src="./images/legostud.png" width="31" height="31"/>
   
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
@@ -107,6 +118,23 @@
     <script src="./js/caman.min.js"></script>
     <script src="https://js.arcgis.com/3.16/"></script>
     <script src="./js/main.js"></script>
+
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+            appId: '760445490763786',
+            xfbml: true,
+            version: 'v2.7'
+            });
+        };
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
         
 </body>
 </html>
