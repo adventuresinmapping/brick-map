@@ -91,11 +91,12 @@ div.map-wrapper, div.convert-btn-wrapper {
 
 div.map-wrapper > div.top-wrapper {
     width: 100%;
+    max-width: 450px;
     height: 90%;
     left: 0;
     top: 0;
     position: absolute;
-    background-color: #909090
+    background-color: #efefef;
 }
 
 div.map-wrapper > div.bottom-wrapper {
@@ -160,15 +161,16 @@ div.convert-btn {
     }
 
     .container {
-        width: 80%;
+        width: 70%;
     }
 
     div.map-wrapper {
-        height: 350px;
+        height: 450px;
     }
 
     div.map-wrapper > div.top-wrapper {
-        height: 85%;
+        height: 100%;
+        max-width: unset;
     }
 
     div.map-wrapper > div.bottom-wrapper {

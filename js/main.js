@@ -64,7 +64,7 @@ require([
             }
 
             return [brightness, contrast, saturation];
-        }
+        };
 
         var resizeMapWrapper = function(isFirstAdjustment){
 
@@ -85,9 +85,42 @@ require([
 
             if(!isFirstAdjustment){
                 clearTimeout(onWindowResizeEndHandler);
-                onWindowResizeEndHandler = setTimeout(captureCurrentMapFrame, 1000);
+                onWindowResizeEndHandler = setTimeout(function(){
+                    captureCurrentMapFrame();
+                }, 1000);
             }
-        }
+        };
+
+        // var drawMapGrid = function(){
+        //     //grid width and height
+        //     var bw = $("#mapDiv").width();
+        //     var bh = $("#mapDiv").height();
+
+        //     //padding around grid
+        //     var p = 0;
+
+        //     //size of canvas
+        //     var cw = bw + (p*2) + 1;
+        //     var ch = bh + (p*2) + 1;
+
+        //     var canvas = $('<canvas/>').attr({width: cw, height: ch}).appendTo('#mapDiv');
+
+        //     var context = canvas.get(0).getContext("2d");
+
+        //     for (var x = 0; x <= bw; x += 30) {
+        //         context.moveTo(0.5 + x + p, p);
+        //         context.lineTo(0.5 + x + p, bh + p);
+        //     }
+
+
+        //     for (var x = 0; x <= bh; x += 30) {
+        //         context.moveTo(p, 0.5 + x + p);
+        //         context.lineTo(bw + p, 0.5 + x + p);
+        //     }
+
+        //     context.strokeStyle = "#909090";
+        //     context.stroke();
+        // };
 
         $(window).resize(resizeMapWrapper);
 
