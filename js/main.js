@@ -10,6 +10,8 @@ require([
 
         var onWindowResizeEndHandler;
 
+        var windowWidth = $(window).width();
+
         var captureCurrentMapFrame = function(){
 
             html2canvas($(mapDiv), {
@@ -42,9 +44,7 @@ require([
                 this.contrast(adjustmentValues[1]);
                 this.saturation(adjustmentValues[2]);
                 this.render(function(){
-                    // var canvas = document.getElementById('processedCanvas');
-                    // var dataUrl = canvas.toDataURL();
-                    // $("#canvasDivImg").attr("src", dataUrl);
+                    // do something if you'd like 
                 });
             });
 
@@ -74,26 +74,32 @@ require([
 
         var resizeMapWrapper = function(isFirstAdjustment){
 
-            isFirstAdjustment = isFirstAdjustment | false;
+            var newWindowWidth = $(window).width();
 
-            $("#canvasDiv").empty();
+            if(newWindowWidth === windowWidth && !isFirstAdjustment) {
+                return;
+            } else {
+                isFirstAdjustment = isFirstAdjustment | false;
 
-            $(".map-wrapper > .top-wrapper").each(function() {
+                $("#canvasDiv").empty();
 
-                var mapWrapper = $(this);
+                $(".map-wrapper > .top-wrapper").each(function() {
 
-                mapWrapper.css("width", "100%");
+                    var mapWrapper = $(this);
 
-                var curWidth = parseInt(mapWrapper.width());
-                var newWidth = Math.floor(curWidth/30) * 30;
-                mapWrapper.width(newWidth);
-            });
+                    mapWrapper.css("width", "100%");
 
-            if(!isFirstAdjustment){
-                clearTimeout(onWindowResizeEndHandler);
-                onWindowResizeEndHandler = setTimeout(function(){
-                    captureCurrentMapFrame();
-                }, 1000);
+                    var curWidth = parseInt(mapWrapper.width());
+                    var newWidth = Math.floor(curWidth/30) * 30;
+                    mapWrapper.width(newWidth);
+                });
+
+                if(!isFirstAdjustment){
+                    clearTimeout(onWindowResizeEndHandler);
+                    onWindowResizeEndHandler = setTimeout(function(){
+                        captureCurrentMapFrame();
+                    }, 1000);
+                }
             }
         };
 
