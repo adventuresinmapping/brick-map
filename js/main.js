@@ -133,7 +133,7 @@ require([
             if(currentBaseMap !== "Map") {
                 app.map.setBasemap("satellite");
             } else {
-                app.map.setBasemap("topo");
+                app.map.setBasemap("oceans");
             }
 
             $(".toggle-basemap-btn").removeClass("active");
