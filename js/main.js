@@ -42,9 +42,9 @@ require([
                 this.contrast(adjustmentValues[1]);
                 this.saturation(adjustmentValues[2]);
                 this.render(function(){
-                    var canvas = document.getElementById('processedCanvas');
-                    var dataUrl = canvas.toDataURL();
-                    $("#canvasDivImg").attr("src", dataUrl);
+                    // var canvas = document.getElementById('processedCanvas');
+                    // var dataUrl = canvas.toDataURL();
+                    // $("#canvasDivImg").attr("src", dataUrl);
                 });
             });
 
@@ -147,12 +147,12 @@ require([
         });
 
         $(".download-canvas-image").on('click', function(evt) {
-            // var canvas = document.getElementById('processedCanvas');
-            // var dataUrl = canvas.toDataURL();
+            var canvas = document.getElementById('processedCanvas');
+            var dataUrl = canvas.toDataURL();
             var link = document.createElement('a');
 
             link.download = 'Legoifer.jpeg';
-            link.href = $("#canvasDivImg").attr("src");
+            link.href = dataUrl;
             link.click();
         });
 

@@ -203,7 +203,7 @@ div.convert-btn {
 /*------------------------ end -----------------------------*/
 
 #canvasDivImg {
-
+    
 }
 
 .bottom-wrapper > div {
@@ -275,7 +275,6 @@ div.convert-btn {
     left: 0px;
     width: 100%;
     height: 100%;
-    display: none;
 }
 
 .esri-attribution {
