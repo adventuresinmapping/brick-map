@@ -76,11 +76,13 @@ require([
 
             var newWindowWidth = $(window).width();
 
+            isFirstAdjustment = isFirstAdjustment | false;
+
             if(newWindowWidth === windowWidth && !isFirstAdjustment) {
+                // console.log("same window size, stop adjusting canvas size");
                 return;
             } else {
-                isFirstAdjustment = isFirstAdjustment | false;
-
+                
                 $("#canvasDiv").empty();
 
                 $(".map-wrapper > .top-wrapper").each(function() {
