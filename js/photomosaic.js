@@ -103,6 +103,7 @@
       PhotoMosaic.prototype.tileCanvas = function(context) {
           var processedCanvas = document.createElement('canvas');
           processedCanvas.id = 'processedCanvas';
+          processedCanvas["data-caman-hidpi-disabled"] = "true";
           var width = processedCanvas.width = context.canvas.width;
           processedCanvas.height = context.canvas.height;
 
