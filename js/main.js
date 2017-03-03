@@ -36,17 +36,17 @@ require([
                 tileShape: 'rectangle',
             });
 
-            Caman('#processedCanvas', function () {
-                var adjustmentValues = getCanvasAdjustmentValues();
-                this.brightness(adjustmentValues[0]);
-                this.contrast(adjustmentValues[1]);
-                this.saturation(adjustmentValues[2]);
-                this.render(function(){
-                    // var canvas = document.getElementById('processedCanvas');
-                    // var dataUrl = canvas.toDataURL();
-                    // $("#canvasDivImg").attr("src", dataUrl);
-                });
-            });
+            // Caman('#processedCanvas', function () {
+            //     var adjustmentValues = getCanvasAdjustmentValues();
+            //     this.brightness(adjustmentValues[0]);
+            //     this.contrast(adjustmentValues[1]);
+            //     this.saturation(adjustmentValues[2]);
+            //     this.render(function(){
+            //         // var canvas = document.getElementById('processedCanvas');
+            //         // var dataUrl = canvas.toDataURL();
+            //         // $("#canvasDivImg").attr("src", dataUrl);
+            //     });
+            // });
 
 
         };
