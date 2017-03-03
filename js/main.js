@@ -15,7 +15,7 @@ require([
             html2canvas($(mapDiv), {
                 useCORS: true,
                 onrendered: function(canvas) {
-                    // $("#canvasDiv").empty();
+                    $("#canvasDiv").empty();
                     processCapturedImage(canvas);
                 }
             });
@@ -70,7 +70,7 @@ require([
 
             isFirstAdjustment = isFirstAdjustment | false;
 
-            // $("#canvasDiv").empty();
+            $("#canvasDiv").empty();
 
             $(".map-wrapper > .top-wrapper").each(function() {
 
