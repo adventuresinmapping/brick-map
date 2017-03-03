@@ -72,6 +72,12 @@ require([
             return [brightness, contrast, saturation];
         };
 
+        var getAdjustedWidth = function(target){
+            var curWidth = parseInt($(target).width());
+            var newWidth = Math.floor(curWidth/30) * 30;
+            return newWidth;
+        };
+
         var resizeMapWrapper = function(isFirstAdjustment){
 
             var newWindowWidth = $(window).width();
@@ -90,10 +96,16 @@ require([
                     var mapWrapper = $(this);
 
                     mapWrapper.css("width", "100%");
+                    mapWrapper.css("height", "100%");
+                    mapWrapper.css("left", "0");
+                    mapWrapper.css("top", "0");
 
                     var curWidth = parseInt(mapWrapper.width());
                     var newWidth = Math.floor(curWidth/30) * 30;
-                    mapWrapper.width(newWidth);
+                    mapWrapper.width(getAdjustedWidth(mapWrapper));
+
+                    mapWrapper.siblings(".background-wrapper").css("width", newWidth);
+                    mapWrapper.siblings(".background-wrapper").css("height", "100%");
                 });
 
                 if(!isFirstAdjustment){
@@ -104,6 +116,8 @@ require([
                 }
             }
         };
+
+
 
         // var drawMapGrid = function(){
         //     //grid width and height
@@ -137,6 +151,45 @@ require([
         // };
 
         $(window).resize(resizeMapWrapper);
+
+        $(".change-map-size-icon").on("click", function(){
+            $("#canvasDiv").empty();
+            $(".change-map-size-icon").removeClass("active");
+        })
+
+        $("#sqrMapBtn").on("click", function(){
+            
+            $(".top-wrapper").css("width", "100%");
+            $(".top-wrapper").css("width", getAdjustedWidth($(".top-wrapper")));
+            $(".top-wrapper").css("left", "0");
+
+            $(".top-wrapper").css("height", "100%");
+            $(".top-wrapper").css("top", "0");
+
+            $(this).addClass("active");
+        });
+
+        $("#hRectMapBtn").on("click", function(){
+            $(".top-wrapper").css("width", "100%");
+            $(".top-wrapper").css("width", getAdjustedWidth($(".top-wrapper")));
+            $(".top-wrapper").css("left", "0");
+
+            $(".top-wrapper").css("height", "60%");
+            $(".top-wrapper").css("top", "15%");
+
+            $(this).addClass("active");
+        });
+
+        $("#vRectMapBtn").on("click", function(){
+
+            $(".top-wrapper").css("height", "100%");
+            $(".top-wrapper").css("top", "0");
+
+            $(".top-wrapper").css("width", "60%");
+            $(".top-wrapper").css("left", "20%");
+
+            $(this).addClass("active");
+        });
 
         $(".convert-btn").on("click", captureCurrentMapFrame);
 

@@ -89,6 +89,13 @@ div.map-wrapper, div.convert-btn-wrapper {
     height: 500px;
 }
 
+div.map-wrapper {
+    /*display:flex;
+    justify-content:center;
+    align-items:center;*/
+    /*background-color: #f3f3f3;*/
+}
+
 div.map-wrapper > div.top-wrapper {
     width: 100%;
     max-width: 450px;
@@ -97,6 +104,13 @@ div.map-wrapper > div.top-wrapper {
     top: 0;
     position: absolute;
     background-color: #efefef;
+}
+
+div.map-wrapper > div.background-wrapper {
+    background-color: #efefef;
+    left: 0;
+    top: 0;
+    position: absolute;
 }
 
 div.map-wrapper > div.bottom-wrapper {
@@ -202,10 +216,6 @@ div.convert-btn {
 
 /*------------------------ end -----------------------------*/
 
-#canvasDivImg {
-    
-}
-
 .bottom-wrapper > div {
     float: left;
 }
@@ -262,6 +272,12 @@ div.convert-btn {
     font-size: 30px;
 }
 
+.buttons-wrapper > div.change-map-size-icon.active { 
+    border-bottom: solid 2px #e8912e;
+    /*display: inline;*/
+    /*padding-bottom: 2px;*/
+}
+
 #mapDiv {
     position: absolute;
     top: 0px;
@@ -285,4 +301,24 @@ div.convert-btn {
     top:0;
     left: 0;
     position: absolute;
+}
+
+.change-map-size-icon {
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+#sqrMapBtn {
+    background-image: url(../images/Shape_Icons/Shape_Square.png);
+    background-size: 30px auto;
+}
+
+#hRectMapBtn {
+    background-image: url(../images/Shape_Icons/Shape_Landscape.png);
+    background-size: 40px auto;
+}
+
+#vRectMapBtn {
+    background-image: url(../images/Shape_Icons/Shape_Portrait.png);
+    background-size: 20px auto;
 }
