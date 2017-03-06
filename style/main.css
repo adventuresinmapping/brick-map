@@ -103,11 +103,11 @@ div.map-wrapper > div.top-wrapper {
     left: 0;
     top: 0;
     position: absolute;
-    background-color: #efefef;
+    /*background-color: #efefef;*/
 }
 
 div.map-wrapper > div.background-wrapper {
-    background-color: #efefef;
+    /*background-color: #efefef;*/
     left: 0;
     top: 0;
     position: absolute;
