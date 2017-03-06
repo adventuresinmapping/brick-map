@@ -24,12 +24,17 @@ define([
             var map = new Map(mapConfig.map.container_id, mapConfig.map.options);
 
             this._initMapLayers(map);
+
             // map.on("click", lang.hitch(this, function(evt){
             //     this._mapClickEventHandler(evt);
             // }));
 
             map.on("load", function(){
                 $("div.attribute-wrapper").show();
+                
+                $("div.map-cover").animate({opacity: '0'}, 2500, function(){
+                    $("div.map-cover").fadeOut();
+                });
             });
 
             return map;
