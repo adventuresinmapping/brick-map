@@ -6,11 +6,13 @@ require([
 
         'use strict';
 
-        var app = new Application();
-
         var onWindowResizeEndHandler;
 
         var windowWidth = $(window).width();
+
+        // resizeMapWrapper(true);
+
+        var app = new Application();
 
         var captureCurrentMapFrame = function(){
 
@@ -19,6 +21,7 @@ require([
                 onrendered: function(canvas) {
                     $("#canvasDiv").empty();
                     processCapturedImage(canvas);
+                    // console.log(canvas.toDataURL());
                 }
             });
         };
@@ -72,13 +75,13 @@ require([
             return [brightness, contrast, saturation];
         };
 
-        var getAdjustedWidth = function(target){
+        function getAdjustedWidth(target){
             var curWidth = parseInt($(target).width());
             var newWidth = Math.floor(curWidth/30) * 30;
             return newWidth;
         };
 
-        var resizeMapWrapper = function(isFirstAdjustment){
+        function resizeMapWrapper(isFirstAdjustment){
 
             var newWindowWidth = $(window).width();
 
@@ -104,8 +107,7 @@ require([
                     var newWidth = Math.floor(curWidth/30) * 30;
                     mapWrapper.width(getAdjustedWidth(mapWrapper));
 
-                    mapWrapper.siblings(".background-wrapper").css("width", newWidth);
-                    mapWrapper.siblings(".background-wrapper").css("height", "100%");
+                    mapWrapper.siblings("div").css("width", newWidth);
                 });
 
                 if(!isFirstAdjustment){
@@ -197,10 +199,21 @@ require([
 
             var currentBaseMap = $(this).text();
 
+            var oceanLayer = app.map.getLayer("ocean_without_labels");
+
             if(currentBaseMap !== "Map") {
-                app.map.setBasemap("satellite");
+                // app.map.setBasemap("satellite");
+
+                oceanLayer.setVisibility(false);
+
+                $(".attribute-wrapper").html('<span>Basemaps powered by <a target="_blank" href="https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9">Esri World Imagery</a> Map Tiles.</span>');
+
             } else {
-                app.map.setBasemap("oceans");
+                // app.map.setBasemap("oceans");
+
+                oceanLayer.setVisibility(true);
+
+                $(".attribute-wrapper").html('<span>Basemaps powered by <a target="_blank" href="https://www.arcgis.com/home/item.html?id=1e126e7520f9466c9ca28b8f28b5e500">Esri World Ocean Base</a> Map Tiles.</span>');
             }
 
             $(".toggle-basemap-btn").removeClass("active");
@@ -246,6 +259,5 @@ require([
             return false;
         }); 
 
-        resizeMapWrapper(true);
     });
 });

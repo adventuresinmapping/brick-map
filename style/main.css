@@ -1,3 +1,12 @@
+@font-face {
+    font-family: LilitaOne;
+    src: url(LilitaOne-Regular.ttf);
+}
+
+html, body {
+    font-family: LilitaOne;
+}
+
 html, body, .container-table {
     height: 100%;
 }
@@ -106,12 +115,11 @@ div.map-wrapper > div.top-wrapper {
     /*background-color: #efefef;*/
 }
 
-div.map-wrapper > div.background-wrapper {
-    /*background-color: #efefef;*/
+/*div.map-wrapper > div.background-wrapper {
     left: 0;
     top: 0;
     position: absolute;
-}
+}*/
 
 div.map-wrapper > div.bottom-wrapper {
     width: 100%;
@@ -120,6 +128,28 @@ div.map-wrapper > div.bottom-wrapper {
     bottom: 0;
     position: absolute;
     background-color: #ffffff;
+}
+
+div.map-wrapper > div.attribute-wrapper { 
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 10%;
+    background-color: rgba(60,60,60,0.5);
+    color: #e9e9e9;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: right;
+    display: none;
+}
+
+div.map-wrapper > div.attribute-wrapper a {
+    color: #e8912e;
+}
+
+div.map-wrapper > div.attribute-wrapper > span {
+    margin-right: 5px;
 }
 
 div.convert-btn-wrapper {
@@ -221,6 +251,10 @@ div.convert-btn {
         width: 120px;
         height: 40px; 
     }
+
+    div.map-wrapper > div.attribute-wrapper { 
+        bottom: 15%;
+    }
 }
 
 @media (max-width: 576px) {
@@ -311,12 +345,22 @@ div.convert-btn {
     width: 100%;
     height: 100%;
 }
+
 #canvasDiv {
     position: absolute;
     top: 0px;
     left: 0px;
     width: 100%;
     height: 100%;
+    opacity: 0;
+
+    /*background-color: #123456;*/
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(../images/Brick.png);
+    background-size: 20% auto;
+
 }
 
 .esri-attribution {

@@ -67,9 +67,11 @@
 
         <div class="row vertical-center-row">
             <div class="text-center col-md-5 map-wrapper">
-                <div class="background-wrapper"></div>
+                <!--<div class="background-wrapper"></div>-->
                 <div class="top-wrapper" id="mapDiv"></div>
-
+                <div class="attribute-wrapper">
+                    <span>Basemaps powered by <a target="_blank" href="https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9">Esri World Imagery</a> Map Tiles.</span>
+                </div>
                 <div class="bottom-wrapper">
 
                     <div class="buttons-wrapper">
@@ -96,7 +98,7 @@
             </div>
 
             <div class="text-center col-md-5 map-wrapper">
-                <div class="background-wrapper"></div>
+                <!--<div class="background-wrapper"></div>-->
                 <div class="top-wrapper">
                     <div id="canvasDiv"></div>
                     <!--<img id="canvasDivImg" width="100%" height="100%"/>-->
@@ -118,6 +120,7 @@
     <img id="legoIcon" src="./images/legostud.png" width="31" height="31"/>
   
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="./js/resizeMapDom.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/ie10-viewport-bug-workaround.js"></script>
     <script src="./js/html2canvas.js"></script>

@@ -7,8 +7,9 @@ define([
     "esri/layers/GraphicsLayer",
     "esri/layers/FeatureLayer",
     "esri/layers/ArcGISDynamicMapServiceLayer",
+    "esri/layers/ArcGISTiledMapServiceLayer"
 ], function(declare, lang, mapConfig, 
-    Map, Graphic, GraphicsLayer, FeatureLayer, ArcGISDynamicMapServiceLayer
+    Map, Graphic, GraphicsLayer, FeatureLayer, ArcGISDynamicMapServiceLayer, ArcGISTiledMapServiceLayer
 ){
    'use strict'; //Enforce strict mode
 
@@ -19,12 +20,17 @@ define([
         },
 
         _initMap: function(config){
+
             var map = new Map(mapConfig.map.container_id, mapConfig.map.options);
 
-            // this._initMapLayers(map);
+            this._initMapLayers(map);
             // map.on("click", lang.hitch(this, function(evt){
             //     this._mapClickEventHandler(evt);
             // }));
+
+            map.on("load", function(){
+                $("div.attribute-wrapper").show();
+            });
 
             return map;
         },
@@ -52,6 +58,12 @@ define([
                     map.addLayer(dLayer);  
                 }
             }
+
+            var tileLayer = new ArcGISTiledMapServiceLayer("https://services.arcgisonline.com/arcgis/rest/services/Ocean/World_Ocean_Base/MapServer", {
+                id: "ocean_without_labels",
+                visible: false
+            });
+            map.addLayer(tileLayer);
         },
 
         //add map click event listener
