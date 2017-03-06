@@ -70,6 +70,10 @@ body {
 
 
 /*----------------- container style -----------------------*/
+/*
+.container {
+    width: 80%;
+}*/
 
 .container-table {
     height: 100%;
@@ -86,19 +90,15 @@ body {
 
 div.map-wrapper, div.convert-btn-wrapper {
     /*background-color: #123456;*/
-    height: 500px;
+    height: 650px;
 }
 
 div.map-wrapper {
-    /*display:flex;
-    justify-content:center;
-    align-items:center;*/
-    /*background-color: #f3f3f3;*/
+    max-width: 650px;
 }
 
 div.map-wrapper > div.top-wrapper {
     width: 100%;
-    max-width: 450px;
     height: 90%;
     left: 0;
     top: 0;
@@ -153,6 +153,32 @@ div.convert-btn {
 
 .footer i {
     margin-left: 10px;
+}
+
+@media (min-width: 1600px) { 
+    .container {
+        width: 80%;
+    }
+
+    div.map-wrapper, div.convert-btn-wrapper {
+        height: 650px;
+    }
+}
+
+@media (max-width: 1600px ) { 
+    .container {
+        width: 90%;
+    }
+
+    div.map-wrapper, div.convert-btn-wrapper {
+        height: 550px;
+    }
+}
+
+@media (max-width: 1280px ) { 
+    div.map-wrapper, div.convert-btn-wrapper {
+        height: 500px;
+    }
 }
 
 @media (max-width: 992px) {
