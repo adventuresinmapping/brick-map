@@ -141,7 +141,7 @@ div.map-wrapper > div.attribute-wrapper {
     font-size: 12px;
     line-height: 20px;
     text-align: right;
-    display: none;
+    /*display: none;*/
 }
 
 div.map-wrapper > div.attribute-wrapper a {

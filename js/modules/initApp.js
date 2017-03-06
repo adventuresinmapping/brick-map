@@ -30,8 +30,6 @@ define([
             // }));
 
             map.on("load", function(){
-                $("div.attribute-wrapper").show();
-                
                 $("div.map-cover").animate({opacity: '0'}, 2500, function(){
                     $("div.map-cover").fadeOut();
                 });

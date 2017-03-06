@@ -160,24 +160,38 @@ require([
         })
 
         $("#sqrMapBtn").on("click", function(){
+
+            var newWidth = getAdjustedWidth($(".top-wrapper"));
             
             $(".top-wrapper").css("width", "100%");
             $(".top-wrapper").css("width", getAdjustedWidth($(".top-wrapper")));
             $(".top-wrapper").css("left", "0");
+            
 
             $(".top-wrapper").css("height", "100%");
             $(".top-wrapper").css("top", "0");
+
+            $(".attribute-wrapper").css("width", getAdjustedWidth($(".top-wrapper")));
+            $(".attribute-wrapper").css("bottom", "10%");
+            $(".attribute-wrapper").css("left", "0");
 
             $(this).addClass("active");
         });
 
         $("#hRectMapBtn").on("click", function(){
+
+            var newWidth = getAdjustedWidth($(".top-wrapper"));
+
             $(".top-wrapper").css("width", "100%");
             $(".top-wrapper").css("width", getAdjustedWidth($(".top-wrapper")));
             $(".top-wrapper").css("left", "0");
 
             $(".top-wrapper").css("height", "60%");
             $(".top-wrapper").css("top", "15%");
+
+            $(".attribute-wrapper").css("width", getAdjustedWidth($(".top-wrapper")));
+            $(".attribute-wrapper").css("bottom", "25%");
+            $(".attribute-wrapper").css("left", "0");
 
             $(this).addClass("active");
         });
@@ -189,6 +203,10 @@ require([
 
             $(".top-wrapper").css("width", "60%");
             $(".top-wrapper").css("left", "20%");
+
+            $(".attribute-wrapper").css("bottom", "10%");
+            $(".attribute-wrapper").css("width", "60%");
+            $(".attribute-wrapper").css("left", "20%");
 
             $(this).addClass("active");
         });
