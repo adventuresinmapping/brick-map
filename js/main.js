@@ -251,7 +251,7 @@ require([
         });
 
         $('.twitter-popup').on('click', function(event) {
-            var message = 'Check out this Legoifer App';
+            var message = 'LEGO-IFY the world in this bricky app.';
             var width  = 500,
                 height = 300,
                 left   = ($(window).width()  - width)  / 2,
@@ -272,7 +272,7 @@ require([
             FB.ui({
                 method: 'share',
                 display: 'popup',
-                quote: 'Check out this Legoifer App',
+                quote: 'LEGO-IFY the world in this bricky app.',
                 href: window.location.href,
             }, function(response){});
         
