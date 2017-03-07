@@ -1,5 +1,7 @@
 var resizeMapDom = (function(){
 
+    $("div.canvas-buttons").hide();
+
     $(".map-wrapper > .top-wrapper").each(function() {
 
         var mapWrapper = $(this);

@@ -48,6 +48,7 @@ require([
                 this.saturation(adjustmentValues[2]);
                 this.render(function(){
                     // do something if you'd like 
+                    $("div.canvas-buttons").show();
                 });
             });
 
@@ -157,6 +158,7 @@ require([
         $(".change-map-size-icon").on("click", function(){
             $("#canvasDiv").empty();
             $(".change-map-size-icon").removeClass("active");
+            $("div.canvas-buttons").hide();
         })
 
         $("#sqrMapBtn").on("click", function(){
