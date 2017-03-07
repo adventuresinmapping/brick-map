@@ -134,11 +134,13 @@
     <script>
         window.fbAsyncInit = function() {
             FB.init({
-            appId: '760445490763786',
-            xfbml: true,
-            version: 'v2.7'
+            appId      : '779139882240617',
+            xfbml      : true,
+            version    : 'v2.8'
             });
+            FB.AppEvents.logPageView();
         };
+
         (function(d, s, id){
             var js, fjs = d.getElementsByTagName(s)[0];
             if (d.getElementById(id)) {return;}
