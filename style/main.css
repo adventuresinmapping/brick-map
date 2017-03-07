@@ -266,6 +266,14 @@ div.convert-btn {
     div.map-wrapper {
         height: 300px;
     }
+
+    .change-map-size-icon-wrapper {
+        display: none;
+    }
+
+    .bottom-wrapper > div.divider {
+        display: none !important;
+    }
 }
 
 /*@media (min-width: 1200px) {
