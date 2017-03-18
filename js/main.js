@@ -34,7 +34,7 @@ require([
             var photomosaic = new PhotoMosaic({
                 canvas: canvas,
                 targetElement: document.getElementById('canvasDiv'),
-                width: mapDivWidth + 20,
+                width: mapDivWidth,
                 height: mapDivHeight,
                 tileHeight: 30,
                 tileWidth: 30,
@@ -49,6 +49,7 @@ require([
                 this.render(function(){
                     // do something if you'd like 
                     $("div.canvas-buttons").show();
+                    $("div.canvas-wrapper").show();
                 });
             });
 

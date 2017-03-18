@@ -307,7 +307,6 @@ div.convert-btn {
 }
 
 .buttons-wrapper {
-    /*position: absolute;*/
     top: 0;
     height: 100%;
     min-width: 60px;
@@ -346,8 +345,6 @@ div.convert-btn {
 
 .buttons-wrapper > div.change-map-size-icon.active { 
     border-bottom: solid 2px #e8912e;
-    /*display: inline;*/
-    /*padding-bottom: 2px;*/
 }
 
 #mapDiv {

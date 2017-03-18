@@ -27,14 +27,12 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://js.arcgis.com/3.16/esri/css/esri.css">
-    <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="./style/mobile.css">
     <style></style>
 
     <script type="text/javascript">
-
-        console.log(window.width);
     
-        if (window.width <= 699) {
+        if (screen.width <= 699) {
             document.location = "mobile.html";
         }
     
@@ -73,62 +71,20 @@
         </div>
     </nav>
 
-    <div class="container container-table">
+    <div class="map-wrapper">
 
-        <div class="row vertical-center-row">
-            <div class="text-center col-md-5 map-wrapper">
-                <!--<div class="background-wrapper"></div>-->
-                <div class="top-wrapper" id="mapDiv">
-                    <div class="map-cover"></div>
-                </div>
-                <div class="attribute-wrapper">
-                    <span>Basemaps powered by <a target="_blank" href="https://www.arcgis.com/home/item.html?id=10df2279f9684e4a9f6a7f08febac2a9">Esri World Imagery</a> Map Tiles.</span>
-                </div>
-                <div class="bottom-wrapper">
+        <div id="mapDiv"></div>
 
-                    <div class="buttons-wrapper change-map-size-icon-wrapper">
-                        <div id="sqrMapBtn" class="icon change-map-size-icon active"></div>
-                        <div id="hRectMapBtn" class="icon change-map-size-icon"></div>
-                        <div id="vRectMapBtn" class="icon change-map-size-icon"></div>
-                    </div>
-
-                    <div class="divider">
-                        <div></div>
-                    </div>
-
-                    <div class="buttons-wrapper">
-                        <div class="toggle-basemap-btn btn-with-underline"><i>Map</i></div>
-                        <div class="toggle-basemap-btn btn-with-underline active"><i>Satellite</i></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center col-md-2 convert-btn-wrapper">
-                <div class="convert-btn">
-                    <i>LEGO-IFY it!</i>
-                </div>
-            </div>
-
-            <div class="text-center col-md-5 map-wrapper">
-                <!--<div class="background-wrapper"></div>-->
-                <div class="top-wrapper">
-                    <div id="canvasDiv"></div>
-                    <!--<img id="canvasDivImg" width="100%" height="100%"/>-->
-                </div>
-                <div class="bottom-wrapper">
-                    <div class="buttons-wrapper canvas-buttons right">
-                        <div class="icon download-canvas-image"><span class="fa fa-download fa-1x"></span></div>
-                        <div class="icon twitter-popup"><span class="fa fa-twitter fa-1x"></span></div>
-                    </div>
-                </div>
-            </div>
+        <div class="convert-btn">
+            <i>LEGO-IFY it!</i>
         </div>
 
-    </div><!-- /.container -->
-
-    <div class="footer">
-        <i>LEGO-IFIER is a for-fun map hack by <a href="https://twitter.com/John_M_Nelson" target="_blank">John Nelson</a> and <a href="http://tofuballs.com/" target="_blank">Vanni Zhang</a></i>
     </div>
+
+    <div class="canvas-wrapper">
+        <div id="canvasDiv"></div>
+    </div>
+
     <img id="legoIcon" src="./images/legostud.png" width="31" height="31"/>
   
     <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>

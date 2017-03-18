@@ -2,8 +2,11 @@ var resizeMapDom = (function(){
 
     $("div.canvas-buttons").hide();
 
-    $(".map-wrapper > .top-wrapper").each(function() {
+    $(".map-wrapper > .top-wrapper").each(resizeDOM);
 
+    // $("#canvasDiv").each(resizeDOM);
+
+    function resizeDOM(){
         var mapWrapper = $(this);
 
         mapWrapper.css("width", "100%");
@@ -16,7 +19,7 @@ var resizeMapDom = (function(){
         mapWrapper.width(newWidth);   
 
         mapWrapper.siblings("div").css("width", newWidth); 
-    });
+    }
 
     $("#canvasDiv").css("opacity", "1");
 

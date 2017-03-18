@@ -1,0 +1,131 @@
+@font-face {
+    font-family: LilitaOne;
+    src: url(LilitaOne-Regular.ttf);
+}
+
+html, body {
+    font-family: LilitaOne;
+}
+
+html, body, #mapDiv {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+/*------------------ top nav bar style ---------------------------*/
+.navbar-inverse {
+    top: 3px;
+    background-color: #e8912e;
+    border-color: #e8912e;
+}
+
+.navbar-header {
+    float: left;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+}
+.navbar-brand {
+    float:none;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #fff;
+    font-size: 24px;
+}
+
+#nav-icons {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    width: 100px;
+    height: 55px;
+    /* background-color: #e0e0e0; */
+}
+
+#nav-icons > div {
+    /* display: inline-block; */
+    float: right;
+    width: 50px;
+    height: 55px;
+    color: #fff;
+    text-align: center;
+    line-height: 55px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.stud-top-line {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    z-index: 999;
+    background-color: #e8912e;
+
+    background-image: url("../images/studtop.png");
+    background-repeat: repeat-x;
+}
+/*------------------------ end -----------------------------*/
+
+.map-wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(../images/Brick.png);
+    background-size: 20% auto;
+}
+
+#mapDiv {
+    width: 100%;
+    height: 100%;
+}
+
+.convert-btn {
+    position: absolute;
+    z-index: 200;
+    bottom: 15px;
+    height:50px; 
+    line-height: 50px;
+    font-size: 22px;
+    border-style: solid;
+    border-width: 1px;
+    color: #efefef;
+    border-color: #e8912e;
+    background-color: #e8912e;
+    cursor: pointer;
+    width: 200px;
+    text-align: center;
+}
+
+.canvas-wrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 300;
+    /*background-color: #123456;*/
+    display: none;
+}
+
+#canvasDiv {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
