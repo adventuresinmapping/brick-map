@@ -104,7 +104,7 @@
           var processedCanvas = document.createElement('canvas');
           processedCanvas.id = 'processedCanvas';
           processedCanvas.setAttribute("data-caman-hidpi-disabled", true);
-        //   processedCanvas["data-caman-hidpi-disabled"] = "true";
+
           var width = processedCanvas.width = context.canvas.width;
           processedCanvas.height = context.canvas.height;
 

@@ -30,7 +30,10 @@ require([
 
             var mapDivWidth = $("#mapDiv").width();
             var mapDivHeight = $("#mapDiv").height();
-            
+
+            console.log("mapDivWidth", mapDivWidth);
+            console.log("mapDivHeight", mapDivHeight);
+
             var photomosaic = new PhotoMosaic({
                 canvas: canvas,
                 targetElement: document.getElementById('canvasDiv'),
