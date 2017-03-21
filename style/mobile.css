@@ -108,6 +108,7 @@ html, body, #mapDiv {
     cursor: pointer;
     width: 200px;
     text-align: center;
+    z-index: 1000;
 }
 
 .canvas-wrapper {
