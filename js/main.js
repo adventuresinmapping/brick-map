@@ -299,5 +299,9 @@ require([
             return false;
         }); 
 
+        document.ontouchmove = function(event){
+            event.preventDefault();
+        }
+
     });
 });
