@@ -184,6 +184,7 @@
 
               var height = tileHeight;
               var width = tileWidth;
+              
               context.beginPath();
               context.rect(x, y, width, height);
               context.closePath();
