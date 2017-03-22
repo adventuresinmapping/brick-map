@@ -31,16 +31,15 @@ require([
             var mapDivWidth = $("#mapDiv").width();
             var mapDivHeight = $("#mapDiv").height();
 
-            console.log("mapDivWidth", mapDivWidth);
-            console.log("mapDivHeight", mapDivHeight);
+            var tileSize = optimizeTileSize(mapDivWidth, mapDivHeight);
 
             var photomosaic = new PhotoMosaic({
                 canvas: canvas,
                 targetElement: document.getElementById('canvasDiv'),
-                width: mapDivWidth,
-                height: mapDivHeight,
-                tileHeight: 30,
-                tileWidth: 30,
+                width: mapDivWidth + 30,
+                height: mapDivHeight + 30,
+                tileHeight: tileSize,
+                tileWidth: tileSize,
                 tileShape: 'rectangle',
             });
 
@@ -79,6 +78,18 @@ require([
 
             return [brightness, contrast, saturation];
         };
+
+        function optimizeTileSize(containerWidth, containerHeight){
+            var tileSize = 30;
+
+            if(containerWidth < 499){
+                tileSize = 20;
+            }
+
+            console.log(containerWidth, containerHeight, tileSize);
+
+            return tileSize;
+        }
 
         function getAdjustedWidth(target){
             var curWidth = parseInt($(target).width());

@@ -170,14 +170,18 @@
           var legoIconImg = document.getElementById('legoIcon');
 
           if (this.options.tileShape === 'circle') {
+
               var centerX = x + tileWidth / 2;
               var centerY = y + tileHeight / 2;
               var radius = Math.min(tileWidth, tileHeight) / 2;
+
               context.beginPath();
               context.arc(centerX, centerY, radius, 0, 2 * Math.PI);
               context.closePath();
               context.fill();
-          } else if (this.options.tileShape === 'rectangle') {
+          } 
+          else if (this.options.tileShape === 'rectangle') {
+
               var height = tileHeight;
               var width = tileWidth;
               context.beginPath();
@@ -185,7 +189,7 @@
               context.closePath();
               context.fill();
 
-              context.drawImage(legoIconImg, x, y);
+              context.drawImage(legoIconImg, x, y, width, height);
           }
       };
 
