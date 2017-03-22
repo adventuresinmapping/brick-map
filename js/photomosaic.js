@@ -16,8 +16,8 @@
       }
 
       PhotoMosaic.prototype.process = function() {
-          this.options.divX = Math.floor(this.options.width / this.options.tileWidth) + 20;
-          this.options.divY = Math.floor(this.options.height / this.options.tileHeight) + 20;
+          this.options.divX = Math.floor(this.options.width / this.options.tileWidth);
+          this.options.divY = Math.floor(this.options.height / this.options.tileHeight);
           var context = this.renderImage();
           this.tileCanvas(context);
       };
