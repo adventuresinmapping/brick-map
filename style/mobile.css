@@ -136,4 +136,5 @@ body {
     display: block;
     width: 110%;
     height: 110%;
+    overflow: hidden;
 }
